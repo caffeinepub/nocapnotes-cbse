@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 97 0.005 240;
+    --foreground: 10 0 0;
+    --card: 100 0 0;
+    --card-foreground: 10 0 0;
+    --popover: 100 0 0;
+    --popover-foreground: 10 0 0;
+    --primary: 52 0.17 260;
+    --primary-foreground: 100 0 0;
+    --secondary: 94 0.01 240;
+    --secondary-foreground: 10 0 0;
+    --muted: 94 0.01 240;
+    --muted-foreground: 30 0 0;
+    --accent: 94 0.01 240;
+    --accent-foreground: 10 0 0;
+    --destructive: 50 0.22 27;
+    --destructive-foreground: 100 0 0;
+    --border: 92 0.005 240;
+    --input: 92 0.005 240;
+    --ring: 52 0.17 260;
+    --radius: 0.625rem;
+    --navy: 22 0.05 240;
+    --navy-dark: 18 0.06 240;
+  }
+
+  * {
+    border-color: oklch(var(--border));
+  }
+
+  body {
+    background-color: oklch(var(--background));
+    color: oklch(var(--foreground));
+    font-family: "Plus Jakarta Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Gen Z gradient wordmark */
+  .nocapnotes-gradient {
+    background: linear-gradient(135deg, oklch(55 0.22 295), oklch(65 0.2 200));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .subject-card-math {
+    --card-accent: 52 0.19 258;
+  }
+  .subject-card-science {
+    --card-accent: 55 0.18 152;
+  }
+  .subject-card-english {
+    --card-accent: 68 0.19 52;
+  }
+  .subject-card-social {
+    --card-accent: 50 0.22 300;
+  }
+  .subject-card-hindi {
+    --card-accent: 55 0.22 25;
+  }
+  .subject-card-computers {
+    --card-accent: 58 0.18 200;
+  }
+
+  .prose-notes h1 {
+    @apply text-2xl font-bold mb-4 text-foreground;
+  }
+  .prose-notes h2 {
+    @apply text-xl font-semibold mb-3 mt-6 text-foreground;
+  }
+  .prose-notes h3 {
+    @apply text-lg font-semibold mb-2 mt-4 text-foreground;
+  }
+  .prose-notes p {
+    @apply mb-4 leading-relaxed text-foreground/90;
+  }
+  .prose-notes ul {
+    @apply list-disc pl-5 mb-4 space-y-1;
+  }
+  .prose-notes ol {
+    @apply list-decimal pl-5 mb-4 space-y-1;
+  }
+  .prose-notes li {
+    @apply leading-relaxed;
+  }
+  .prose-notes strong {
+    @apply font-semibold;
+  }
+  .prose-notes blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-muted-foreground my-4;
+  }
+  .prose-notes code {
+    @apply bg-muted px-1 py-0.5 rounded text-sm font-mono;
+  }
+  .prose-notes pre {
+    @apply bg-muted p-4 rounded-lg mb-4 overflow-x-auto;
+  }
+  .prose-notes pre code {
+    @apply bg-transparent p-0;
+  }
+}
